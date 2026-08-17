@@ -1,5 +1,7 @@
 /*
  * Copyright (c) 2020 The ZMK Contributors
+/*
+ * Copyright (c) 2020 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
  */
@@ -13,18 +15,17 @@
         compatible = "zmk,keymap";
 
         // ================================================================
-        // BASE LAYER – QWERTY with Home Row Mods using &mt
-        //   Left:  A=Shift, S=Ctrl, D=Alt, F=GUI
-        //   Right: J=Shift, K=Ctrl, L=Alt, ;=GUI
+        // BASE LAYER – Plain QWERTY (no mod-tap)
+        //   Modifiers available: LCTRL, LSHFT, LGUI (left thumb)
         // ================================================================
         default_layer {
             bindings = <
-// Col: 0            1            2            3            4            5      |   6            7            8            9            10            11
-        &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T      &kp Y        &kp U        &kp I        &kp O        &kp P         &kp LBKT
-        &kp LCTRL    &mt LSHIFT A &mt LCTRL S  &mt LALT D   &mt LGUI F   &kp G      &kp H        &mt LSHIFT J &mt LCTRL K  &mt LALT L   &mt LGUI SEMI &kp SQT
-        &kp LSHFT    &kp Z        &kp X        &kp C        &kp V        &kp B      &kp N        &kp M        &kp COMMA    &kp DOT      &kp FSLH      &kp ESC
+// Col: 0            1            2            3            4            5               | 6            7            8            9            10            11
+        &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T             &kp Y        &kp U        &kp I        &kp O        &kp P         &kp LBKT
+        &kp LCTRL    &kp A        &kp S        &kp D        &kp F        &kp G             &kp H        &kp J        &kp K        &kp L        &kp SEMI      &kp SQT
+        &kp LSHFT    &kp Z        &kp X        &kp C        &kp V        &kp B             &kp N        &kp M        &kp COMMA    &kp DOT      &kp FSLH      &kp ESC
 // Thumbs:   Left:  GUI  LOWER  SPACE        |   Right:  BSPC  RAISE  RET
-                                    &kp LGUI   &mo 1        &kp SPACE    &kp BSPC    &mo 2        &kp RET
+                                    &kp LGUI   &mo 1        &kp SPACE    &kp BSPC          &mo 2        &kp RET
             >;
         };
 
@@ -33,11 +34,11 @@
         // ================================================================
         lower_layer {
             bindings = <
-// Col: 0            1            2            3            4            5        |  6            7            8            9            10           11
-        &kp TAB      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5       &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp BSPC
-        &trans       &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &trans       &trans
-        &kp LSHFT    &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans
-                                    &kp LGUI   &trans       &kp SPACE    &kp BSPC     &trans       &kp RET
+// Col: 0            1            2            3            4            5             |  6            7            8            9            10           11
+        &trans       &kp N1       &kp N2       &kp N3       &kp N4       &kp N5           &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp BSPC
+        &trans       &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &trans       &trans
+        &trans       &trans       &trans       &trans       &trans       &trans           &trans       &trans       &trans       &trans       &trans       &trans
+                                    &trans   &trans       &trans                          &kp LALT     &trans       &trans
             >;
         };
 
@@ -46,11 +47,10 @@
         // ================================================================
         raise_layer {
             bindings = <
-// Col: 0            1            2            3            4            5      |     6            7            8            9            10           11
-        &kp TAB      &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT    &kp CARET    &kp AMPS     &kp ASTRK    &kp LPAR     &kp RPAR     &kp BSPC
-        &kp LCTRL    &kp LBKT     &kp RBKT     &kp LBRC     &kp RBRC     &trans       &kp MINUS    &kp EQUAL    &kp UNDER    &kp PLUS     &kp BSLH     &kp GRAVE
-        &kp LSHFT    &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &kp PIPE     &kp TILDE
-                                    &kp LGUI   &trans       &kp SPACE    &kp BSPC     &trans       &kp RET
+// Col: 0            1            2            3            4            5         |     6            7            8            9            10           11
+        &trans       &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT       &kp CARET    &kp AMPS     &kp ASTRK    &kp LPAR     &kp RPAR     &kp BSPC
+        &trans       &kp LBKT     &kp RBKT     &kp LBRC     &kp RBRC     &trans          &kp MINUS    &kp EQUAL    &kp UNDER    &kp PLUS     &kp BSLH     &kp GRAVE &trans    &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &kp PIPE     &kp TILDE
+                                    &trans   &trans       &trans                         &trans     &trans       &trans
             >;
         };
 
