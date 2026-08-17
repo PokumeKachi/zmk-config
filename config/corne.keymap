@@ -7,8 +7,8 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 / {
     keymap {
@@ -18,52 +18,52 @@
         // BASE LAYER – Plain QWERTY (no mod-tap)
         //   Modifiers available: LCTRL, LSHFT, LGUI (left thumb)
         // ================================================================
+
         default_layer {
             bindings = <
-// Col: 0            1            2            3            4            5               | 6            7            8            9            10            11
-        &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T             &kp Y        &kp U        &kp I        &kp O        &kp P         &kp LBKT
-        &kp LCTRL    &kp A        &kp S        &kp D        &kp F        &kp G             &kp H        &kp J        &kp K        &kp L        &kp SEMI      &kp SQT
-        &kp LSHFT    &kp Z        &kp X        &kp C        &kp V        &kp B             &kp N        &kp M        &kp COMMA    &kp DOT      &kp FSLH      &kp ESC
-// Thumbs:   Left:  GUI  LOWER  SPACE        |   Right:  BSPC  RAISE  RET
-                                    &kp LGUI   &mo 1        &kp SPACE    &kp BSPC          &mo 2        &kp RET
+&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y     &kp U  &kp I      &kp O    &kp P     &kp ESC
+&kp LCTRL  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H     &kp J  &kp K      &kp L    &kp SEMI  &kp RCTRL
+&kp LSHFT  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N     &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
+                         &kp LGUI  &mo 1  &kp SPACE    &kp BSPC  &mo 2  &kp RET
             >;
         };
 
         // ================================================================
         // LOWER LAYER – Numbers, Bluetooth, Arrows
         // ================================================================
+
         lower_layer {
             bindings = <
-// Col: 0            1            2            3            4            5             |  6            7            8            9            10           11
-        &trans       &kp N1       &kp N2       &kp N3       &kp N4       &kp N5           &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp BSPC
-        &trans       &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &trans       &trans
-        &trans       &trans       &trans       &trans       &trans       &trans           &trans       &trans       &trans       &trans       &trans       &trans
-                                    &trans   &trans       &trans                          &kp LALT     &trans       &trans
+&trans  &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &kp BSPC
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&trans  &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans  &trans     &trans  &trans
+                                    &trans        &trans        &trans          &kp LALT  &trans    &trans
             >;
         };
 
         // ================================================================
         // RAISE LAYER – Symbols
         // ================================================================
+
         raise_layer {
             bindings = <
-// Col: 0            1            2            3            4            5         |     6            7            8            9            10           11
-        &trans       &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT       &kp CARET    &kp AMPS     &kp ASTRK    &kp LPAR     &kp RPAR     &kp BSPC
-        &trans       &kp LBKT     &kp RBKT     &kp LBRC     &kp RBRC     &trans          &kp MINUS    &kp EQUAL    &kp UNDER    &kp PLUS     &kp BSLH     &kp GRAVE &trans    &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &kp PIPE     &kp TILDE
-                                    &trans   &trans       &trans                         &trans     &trans       &trans
+&trans  &trans    &trans    &trans    &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
+&trans  &kp LBKT  &kp RBKT  &kp LBRC  &kp RBRC  &kp SQT      &kp MINUS  &kp EQUAL  &kp UNDER  &kp PLUS  &kp BSLH  &kp GRAVE
+&trans  &trans    &trans    &trans    &trans    &trans       &trans     &trans     &trans     &trans    &trans    &kp TILDE
+                            &trans    &trans    &trans       &trans     &trans     &trans
             >;
         };
 
         // ================================================================
         // FUNCTION LAYER – F-keys & Media
         // ================================================================
+
         function_layer {
             bindings = <
-// Col:  0            1            2            3            4            5      |  6            7            8            9            10           11
-        &kp F1       &kp F2       &kp F3       &kp F4       &kp F5       &kp F6      &kp F7       &kp F8       &kp F9       &kp F10      &kp F11      &kp F12
-        &trans       &trans       &trans       &trans       &trans       &trans      &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_MUTE   &kp C_PLAY_PAUSE     &trans       &trans
-        &trans       &trans       &trans       &trans       &trans       &trans      &trans       &trans       &trans       &trans       &trans       &trans
-                                    &trans     &trans       &trans       &trans      &trans       &trans
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6    &kp F7             &kp F8           &kp F9      &kp F10           &kp F11  &kp F12
+&trans  &trans  &trans  &trans  &trans  &trans    &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_MUTE  &kp C_PLAY_PAUSE  &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans             &trans           &trans      &trans            &trans   &trans
+                        &trans  &trans  &trans    &trans             &trans           &trans
             >;
         };
     };
