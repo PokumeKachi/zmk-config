@@ -2,12 +2,12 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-/ {
-    &sk {
-        release-after-ms = <300>;
-        quick-release;
-    };
+&sk {
+    release-after-ms = <300>;
+    quick-release;
+};
 
+/ {
     keymap {
         compatible = "zmk,keymap";
 
